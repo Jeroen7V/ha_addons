@@ -33,3 +33,13 @@ jobs:
         tags: devel
         tag_with_ref: false
         tag_with_sha: true
+    - name: Docker Build
+      if: contains(github.ref, 'shelly')
+      uses: docker/build-push-action@v1.1.1
+      with:
+        username: ${{ secrets.DockerhubUser }}
+        password: ${{ secrets.DockerhubPass }}
+        repository: ${{ secrets.DockerhubRepo }}
+        tags: shelly
+        tag_with_ref: false
+        tag_with_sha: true
