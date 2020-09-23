@@ -28,7 +28,11 @@ async def shelly_get(location: str = ""):
         requests.post(url)
         print("Turned everything off.")
     elif str.upper(location) == 'HALLUP':
-        url = 'https://monnikenhof.duckdns.org:8001/api/webhook/togglehall'
+        url = 'https://monnikenhof.duckdns.org:8001/api/webhook/halltoggle'
+        requests.post(url)
+        print("Toggled hall lights.")
+    elif str.upper(location) == 'BEDROOM':
+        url = 'https://monnikenhof.duckdns.org:8001/api/webhook/bedroomtoggle'
         requests.post(url)
         print("Toggled hall lights.")
     return "Hello World!"
