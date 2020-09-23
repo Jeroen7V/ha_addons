@@ -23,16 +23,18 @@ async def hook_post(request: Request):
 
 @app.get("/shelly")
 async def shelly_get(location: str = ""):
+    response = "Done nothing!"
     if str.upper(location) == 'HALLDOWN':
         url = 'https://monnikenhof.duckdns.org:8001/api/webhook/alloff'
         requests.post(url)
-        print("Turned everything off.")
+        response = "Turned everything off."
     elif str.upper(location) == 'HALLUP':
         url = 'https://monnikenhof.duckdns.org:8001/api/webhook/halltoggle'
         requests.post(url)
-        print("Toggled hall lights.")
+        response = "Toggled hall lights."
     elif str.upper(location) == 'BEDROOM':
         url = 'https://monnikenhof.duckdns.org:8001/api/webhook/bedroomtoggle'
         requests.post(url)
-        print("Toggled hall lights.")
-    return "Hello World!"
+        response = "Toggled bedroom lights."
+    print(response)
+    return response
