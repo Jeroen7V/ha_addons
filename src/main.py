@@ -40,7 +40,7 @@ async def shelly_get(location: str = ""):
     return response
 
 @app.get("/shellylocal")
-async def shelly_get(location: str = ""):
+async def shellylocal_get(location: str = ""):
     response = "Done nothing!"
     if str.upper(location) == 'HALLDOWN':
         url = 'http://192.168.1.4:8123/api/webhook/alloff'
