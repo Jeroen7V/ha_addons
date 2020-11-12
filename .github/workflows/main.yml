@@ -18,9 +18,8 @@ jobs:
       with:
         username: ${{ secrets.DockerhubUser }}
         password: ${{ secrets.DockerhubPass }}
-        repository: ${{ secrets.DockerhubRepo }}
         dockerfile: ./Hookerr/Dockerfile
-        tags: latest
+        tags: ${{ secrets.DockerhubRepo }}:latest
         tag_with_ref: false
         tag_with_sha: true
     - name: Docker Build
@@ -29,8 +28,7 @@ jobs:
       with:
         username: ${{ secrets.DockerhubUser }}
         password: ${{ secrets.DockerhubPass }}
-        repository: ${{ secrets.DockerhubRepo }}
         dockerfile: ./Hookerr/Dockerfile
-        tags: devel
+        tags: ${{ secrets.DockerhubRepo }}:devel
         tag_with_ref: false
         tag_with_sha: true
