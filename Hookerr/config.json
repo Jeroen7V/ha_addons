@@ -4,6 +4,7 @@
     "slug": "hookerr",
     "description": "Translate requests to HA webhooks.",
     "arch": ["aarch64", "armhf", "amd64", "i386"],
+    "image": "joene/hookerr:latest",
     "startup": "before",
     "boot": "auto",
     "options": {
