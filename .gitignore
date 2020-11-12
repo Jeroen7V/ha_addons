@@ -130,3 +130,9 @@ dmypy.json
 
 # Visual Studio Code
 .vscode
+
+# Home Assistant
+options.json
+
+# GIMP
+*.xcf
