@@ -1,0 +1,21 @@
+{
+    "name": "Hookerr",
+    "version": "1.0",
+    "slug": "hookerr",
+    "description": "Translate requests to HA webhooks.",
+    "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
+    "startup": "before",
+    "boot": "auto",
+    "options": {
+        "get": [
+            "webhook_name",
+            "webhook_name2"
+        ]
+    },
+    "schema": {
+        "get": ["str"]
+    },
+    "ports": {
+      "8000/tcp": 8000
+    }
+  }
